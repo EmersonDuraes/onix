@@ -17,21 +17,24 @@ if ($nome === '' || !$email || $mensagem === '') {
     exit('Preencha todos os campos corretamente. Volte e tente novamente.');
 }
 
-$para    = 'duraes10duraes@gmail.com.com';
+$para    = 'duraes10duraes@gmail.com';
 $assunto = 'Nova mensagem pelo site - Onix Gestão Contábil';
 
 $corpo  = "Nome: $nome\n";
 $corpo .= "E-mail: $email\n\n";
 $corpo .= "Mensagem:\n$mensagem\n";
 
-// O remetente deve ser um e-mail do SEU domínio (senão cai no spam)
-$headers  = "From: Site Onix <duraes10duraes@gmail.com>\r\n";
+// Remetente: e-mail do SEU domínio (crie essa conta na hospedagem)
+$remetente = 'contato@onixgestaocontabil.com.br';
+
+$headers  = "From: Site Onix <$remetente>\r\n";
 $headers .= "Reply-To: $nome <$email>\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 $assunto_codificado = '=?UTF-8?B?' . base64_encode($assunto) . '?=';
 
-if (mail($para, $assunto_codificado, $corpo, $headers)) {
+// O quinto parâmetro (-f) define o remetente de envio e ajuda a não cair no spam
+if (mail($para, $assunto_codificado, $corpo, $headers, '-f' . $remetente)) {
     header('Location: /obrigado.html');
 } else {
     http_response_code(500);
