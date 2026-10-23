@@ -166,6 +166,7 @@ http://www.templatemo.com/tm-486-new-event
     Seu navegador não suporta vídeo.
   </video>
 </div>
+
 				</div>
 			</div>
 
@@ -177,77 +178,160 @@ http://www.templatemo.com/tm-486-new-event
 <!-- =========================
     SPEAKERS SECTION   
 ============================== -->
-<section id="speakers" class="parallax-section">
-	<div class="container">
-		<div class="row">
+<!-- ===== VÍDEOS EM CÍRCULOS - ONIX GESTÃO CONTÁBIL ===== -->
+<style>
+  .onix-videos{--azul:#0f2c57;--azul2:#1d4a87;--texto:#2c3e57;
+    padding:56px 16px;background:linear-gradient(135deg,#f2f5f8 0%,#d5dbe3 100%);
+    font-family:"Segoe UI",Roboto,Arial,sans-serif;box-sizing:border-box}
+  .onix-videos *{box-sizing:border-box}
+  .onix-videos__topo{max-width:1100px;margin:0 auto 40px;text-align:center}
+  .onix-videos__topo h2{margin:0 0 10px;font-size:clamp(1.6rem,4vw,2.4rem);color:var(--azul);line-height:1.2}
+  .onix-videos__topo p{margin:0 auto;max-width:640px;font-size:clamp(1rem,2.2vw,1.15rem);color:var(--texto);line-height:1.5}
+  .onix-videos__topo::after{content:"";display:block;width:90px;height:6px;border-radius:3px;background:var(--azul);margin:20px auto 0}
 
-			<div class="col-md-12 col-sm-12 wow bounceIn">
-				<div class="section-title">
-					<h2>Nossos Profissionais</h2>
-					<p>Talento, ética e excelência definem os profissionais que constroem a nossa história.</p>
-				</div>
-			</div>
+  /* círculos: 6 por linha > 3 por linha > 2 por linha */
+  .onix-videos__grade{margin:0 auto;display:grid;gap:34px 26px;justify-content:center;
+    grid-template-columns:repeat(6,minmax(0,180px))}
+  @media (max-width:1023px){.onix-videos__grade{grid-template-columns:repeat(3,minmax(0,180px))}}
+  @media (max-width:560px){.onix-videos{padding:40px 12px}
+    .onix-videos__grade{grid-template-columns:repeat(2,minmax(0,160px));gap:28px 20px}}
 
-			<!-- Testimonial Owl Carousel section
-			================================================== -->
-			<div id="owl-speakers" class="owl-carousel">
+  .onix-bolha{all:unset;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer;text-align:center}
+  .onix-bolha:focus-visible .onix-bolha__anel{outline:4px solid #f5b400;outline-offset:4px}
+  .onix-bolha__anel{position:relative;display:block;width:100%;aspect-ratio:1/1;border-radius:50%;padding:6px;
+    background:linear-gradient(135deg,#2d63aa,#0c2650);box-shadow:0 10px 24px rgba(15,44,87,.35);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .onix-bolha:hover .onix-bolha__anel{transform:scale(1.06);box-shadow:0 14px 30px rgba(15,44,87,.45)}
+  .onix-bolha__anel img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid #fff;background:#0f2c57}
+  .onix-bolha__play{position:absolute;inset:6px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:rgba(15,44,87,.28);transition:background .25s ease}
+  .onix-bolha:hover .onix-bolha__play{background:rgba(15,44,87,.5)}
+  .onix-bolha__play svg{width:34%;height:34%;fill:#fff;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5));margin-left:4%}
+  .onix-bolha__legenda{font-size:.95rem;font-weight:700;letter-spacing:1.5px;color:var(--azul)}
 
-				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.9s">
-					<div class="speakers-wrapper">
-						<img src="images/empregado1.jpg" class="img-responsive" alt="">
-							<div class="speakers-thumb">
-								<h3>PROFISSIONAL</h3>
-								<h6>1</h6>
-							</div>
-					</div>
-				</div>
+  /* janela do vídeo */
+  .onix-modal{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;
+    background:rgba(8,20,40,.88);padding:16px}
+  .onix-modal.aberto{display:flex}
+  .onix-modal__caixa{position:relative;width:min(92vw,calc(88vh * 9 / 16));max-width:480px}
+  .onix-modal video{display:block;width:100%;height:auto;max-height:88vh;aspect-ratio:9/16;object-fit:contain;
+    background:#000;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+  .onix-modal__fechar{position:absolute;top:-14px;right:-14px;width:42px;height:42px;border:0;border-radius:50%;
+    background:#fff;color:#0f2c57;font-size:26px;line-height:1;font-weight:700;cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,.45)}
+  .onix-modal__fechar:hover{background:#e9eef4}
+  @media (max-width:560px){.onix-modal__fechar{top:-50px;right:0}}
+</style>
 
-				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
-					<div class="speakers-wrapper">
-						<img src="images/empregado1.jpg" class="img-responsive" alt="">
-							<div class="speakers-thumb">
-								<h3>PROFISSIONAL</h3>
-								<h6>2</h6>
-							</div>
-					</div>
-				</div>
+<section class="onix-videos" id="videos">
+  <div class="onix-videos__topo">
+    <h2>Depoimentos</h2>
+    <p>Histórias de quem confia no nosso trabalho.</p>
+  </div>
 
-				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.9s">
-					<div class="speakers-wrapper">
-						<img src="images/empregado1.jpg" class="img-responsive" alt="">
-							<div class="speakers-thumb">
-								<h3>PROFISSIONAL</h3>
-								<h6>3</h6>
-							</div>
-					</div>
-				</div>
+  <div class="onix-videos__grade">
 
-				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
-					<div class="speakers-wrapper">
-						<img src="images/empregado1.jpg" class="img-responsive" alt="">
-							<div class="speakers-thumb">
-								<h3>PROFISSIONAL</h3>
-								<h6>4</h6>
-							</div>
-					</div>
-				</div>
+    <button type="button" class="onix-bolha" data-video="images/video-1.mp4" data-capa="videos/capa-1.jpg" aria-label="Assistir ao vídeo 1">
+      <span class="onix-bolha__anel">
+        <img src="images/1.png" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+    </button>
 
-				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
-					<div class="speakers-wrapper">
-						<img src="images/empregado1.jpg" class="img-responsive" alt="">
-							<div class="speakers-thumb">
-								<h3>PROFISSIONAL</h3>
-								<h6>5</h6>
-							</div>
-					</div>
-				</div>
-				
-			</div>
+    <button type="button" class="onix-bolha" data-video="images/video-2.mp4" data-capa="videos/capa-2.jpg" aria-label="Assistir ao vídeo 2">
+      <span class="onix-bolha__anel">
+        <img src="images/2.png" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+    </button>
 
-		</div>
-	</div>
+    <button type="button" class="onix-bolha" data-video="images/video-3.mp4" data-capa="videos/capa-3.jpg" aria-label="Assistir ao vídeo 3">
+      <span class="onix-bolha__anel">
+        <img src="images/3.png" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+    </button>
+
+    <button type="button" class="onix-bolha" data-video="images/video-4.mp4" data-capa="videos/capa-4.jpg" aria-label="Assistir ao vídeo 4">
+      <span class="onix-bolha__anel">
+        <img src="images/4.png" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+    </button>
+
+    <button type="button" class="onix-bolha" data-video="images/video-5.mp4" data-capa="videos/capa-5.jpg" aria-label="Assistir ao vídeo 5">
+      <span class="onix-bolha__anel">
+        <img src="images/5.png" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+    </button>
+
+    <button type="button" class="onix-bolha" data-video="images/video-6.mp4" data-capa="videos/capa-6.jpg" aria-label="Assistir ao vídeo 6">
+      <span class="onix-bolha__anel">
+        <img src="images/6.png" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+    </button>
+
+	
+    <!-- VÍDEO 7 (extra) - para usar, apague as marcas de comentário desta linha e da última linha do bloco
+    <button type="button" class="onix-bolha" data-video="videos/video-7.mp4" data-capa="videos/capa-7.jpg" aria-label="Assistir ao vídeo 7">
+      <span class="onix-bolha__anel">
+        <img src="videos/circulo-7.jpg" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+      <span class="onix-bolha__legenda">Vídeo 07</span>
+    </button>
+    -->
+
+  </div>
+
+  <!-- Janela que abre o vídeo -->
+  <div class="onix-modal" id="onixModal" role="dialog" aria-modal="true" aria-label="Vídeo">
+    <div class="onix-modal__caixa">
+      <button type="button" class="onix-modal__fechar" id="onixFechar" aria-label="Fechar vídeo">&times;</button>
+      <video id="onixPlayer" controls playsinline preload="none"></video>
+    </div>
+  </div>
 </section>
 
+<script>
+(function(){
+  var modal = document.getElementById('onixModal');
+  var player = document.getElementById('onixPlayer');
+  var fechar = document.getElementById('onixFechar');
+  var ultimo = null;
+
+  function abrir(btn){
+    ultimo = btn;
+    player.poster = btn.getAttribute('data-capa') || '';
+    player.src = btn.getAttribute('data-video');
+    modal.classList.add('aberto');
+    document.body.style.overflow = 'hidden';
+    var p = player.play();                    // o clique do usuário libera o som
+    if (p && p.catch) { p.catch(function(){ /* se bloquear, o usuário usa o botão play */ }); }
+    fechar.focus();
+  }
+  function fecharModal(){
+    player.pause();
+    player.removeAttribute('src');
+    player.load();
+    modal.classList.remove('aberto');
+    document.body.style.overflow = '';
+    if (ultimo) { ultimo.focus(); }
+  }
+
+  document.querySelectorAll('.onix-bolha').forEach(function(b){
+    b.addEventListener('click', function(){ abrir(b); });
+  });
+  fechar.addEventListener('click', fecharModal);
+  modal.addEventListener('click', function(e){ if (e.target === modal) { fecharModal(); } });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && modal.classList.contains('aberto')) { fecharModal(); }
+  });
+})();
+</script>
+<!-- ===== FIM DA SEÇÃO DE VÍDEOS ===== -->
 
 <!-- =========================
     PROGRAM SECTION   
@@ -407,7 +491,7 @@ http://www.templatemo.com/tm-486-new-event
 			</div>
 
 			<div class="wow fadeInUp col-md-5 col-sm-5" data-wow-delay="1s">
-				<form action="https://formsubmit.co/emersonduraes@hotmail.com" method="post">
+				<form action="https://formsubmit.co/onix.contabilidade@yahoo.com" method="post">
   <input type="hidden" name="_subject" value="Novo contato pelo site - Onix Gestão Contábil">
   <input type="hidden" name="_captcha" value="true">
   <input type="hidden" name="_next" value="https://onixgestaocontabil.com.br/obrigado.html">
