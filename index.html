@@ -503,25 +503,16 @@
 			</div>
 
 			<div class="wow fadeInUp col-md-5 col-sm-5" data-wow-delay="1s">
-				<form action="https://formsubmit.co/emersonduraes@hotmail.com" method="post">
-					<input type="hidden" name="_subject" value="Novo registro de empresa pelo site - Onix Gestão Contábil">
-					<input type="hidden" name="_captcha" value="true">
-					<input type="hidden" name="_next" value="https://onixgestaocontabil.com.br/obrigado.html">
-					<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<form action="enviar.php" method="post">
+	<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
-					<input name="nome" type="text" class="form-control" id="nome" placeholder="Nome" aria-label="Nome"
-					       required autocomplete="name">
-					<input name="empresa" type="text" class="form-control" id="empresa" placeholder="Empresa" aria-label="Empresa"
-					       autocomplete="organization">
-					<input name="telefone" type="tel" class="form-control" id="telefone" placeholder="Telefone (DDD + número)" aria-label="Telefone"
-					       required autocomplete="tel" inputmode="tel" pattern="[0-9\s\(\)\+\-]{10,}">
-					<input name="email" type="email" class="form-control" id="email" placeholder="E-mail" aria-label="E-mail"
-					       required autocomplete="email">
-
-					<div class="col-md-offset-6 col-md-6 col-sm-offset-1 col-sm-10">
-						<input type="submit" class="form-control" id="submit" value="REGISTRAR">
-					</div>
-				</form>
+	<input name="nome" type="text" class="form-control" id="contato-nome" placeholder="Nome" aria-label="Nome" required autocomplete="name">
+	<input name="email" type="email" class="form-control" id="contato-email" placeholder="E-mail" aria-label="E-mail" required autocomplete="email">
+	<textarea name="mensagem" rows="5" class="form-control" id="contato-mensagem" placeholder="Mensagem" aria-label="Mensagem" required></textarea>
+	<div class="col-md-6 col-sm-10">
+		<input type="submit" class="form-control" id="contato-enviar" value="ENVIAR">
+	</div>
+</form>
 			</div>
 
 			<div class="col-md-1"></div>
@@ -529,6 +520,7 @@
 		</div>
 	</div>
 </section>
+
 
 
 <!-- =========================
@@ -678,19 +670,16 @@
 					<div class="section-title">
 						<h2>Contato</h2>
 					</div>
-					<form action="https://formsubmit.co/emersonduraes@hotmail.com" method="post">
-						<input type="hidden" name="_subject" value="Nova mensagem pelo site - Onix Gestão Contábil">
-						<input type="hidden" name="_captcha" value="true">
-						<input type="hidden" name="_next" value="https://onixgestaocontabil.com.br/obrigado.html">
-						<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<form action="enviar.php" method="post">
+	<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
-						<input name="nome" type="text" class="form-control" id="contato-nome" placeholder="Nome" aria-label="Nome" required autocomplete="name">
-						<input name="email" type="email" class="form-control" id="contato-email" placeholder="E-mail" aria-label="E-mail" required autocomplete="email">
-						<textarea name="mensagem" rows="5" class="form-control" id="contato-mensagem" placeholder="Mensagem" aria-label="Mensagem" required></textarea>
-						<div class="col-md-6 col-sm-10">
-							<input type="submit" class="form-control" id="contato-enviar" value="ENVIAR">
-						</div>
-					</form>
+	<input name="nome" type="text" class="form-control" id="contato-nome" placeholder="Nome" aria-label="Nome" required autocomplete="name">
+	<input name="email" type="email" class="form-control" id="contato-email" placeholder="E-mail" aria-label="E-mail" required autocomplete="email">
+	<textarea name="mensagem" rows="5" class="form-control" id="contato-mensagem" placeholder="Mensagem" aria-label="Mensagem" required></textarea>
+	<div class="col-md-6 col-sm-10">
+		<input type="submit" class="form-control" id="contato-enviar" value="ENVIAR">
+	</div>
+</form>
 				</div>
 			</div>
 
