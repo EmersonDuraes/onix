@@ -37,13 +37,13 @@
   /* ---------- Abertura: vídeo cobrindo a tela inteira + texto corrente ---------- */
   #inicio.intro-section,.intro-section{position:relative !important;display:block !important;width:100% !important;max-width:none !important;
     height:100vh !important;height:100dvh !important;min-height:420px !important;margin:0 !important;padding:0 !important;
-    overflow:hidden !important;background:#0f2c5711 !important}
+    overflow:hidden !important;background:#0f2c57 !important}
   .intro-section .video-bg,.video-bg{position:absolute !important;top:0 !important;left:0 !important;right:auto !important;bottom:auto !important;
     width:100% !important;height:100% !important;min-width:100% !important;min-height:100% !important;max-width:none !important;max-height:none !important;
     margin:0 !important;padding:0 !important;transform:none !important;object-fit:cover !important;object-position:center !important}
-  .intro-section::before{content:"";position:absolute;inset:0;background:rgba(15, 44, 87, 0.149);z-index:1}
+  .intro-section::before{content:"";position:absolute;inset:0;background:rgba(15,44,87,.45);z-index:1}
   .texto-corrente{position:absolute;left:0;right:0;bottom:10%;z-index:2;overflow:hidden;padding:14px 0;
-    background:rgba(15, 44, 87, 0.262);border-top:2px solid #ffffff00;border-bottom:2px solid #ffffff00}
+    background:rgba(15,44,87,.72);border-top:2px solid #fff;border-bottom:2px solid #fff}
   .texto-corrente__faixa{display:flex;width:max-content;animation:corrente 28s linear infinite}
   .texto-corrente__faixa span{flex:none;padding-right:60px;white-space:nowrap;color:#fff;font-weight:700;
     font-family:"Segoe UI",Roboto,Arial,sans-serif;font-size:clamp(1.1rem,3vw,2rem);letter-spacing:2px;text-transform:uppercase}
@@ -503,16 +503,25 @@
 			</div>
 
 			<div class="wow fadeInUp col-md-5 col-sm-5" data-wow-delay="1s">
-<form action="enviar.php" method="post">
-	<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+				<form action="https://formsubmit.co/emersonduraes@hotmail.com" method="post">
+					<input type="hidden" name="_subject" value="Novo registro de empresa pelo site - Onix Gestão Contábil">
+					<input type="hidden" name="_captcha" value="false">
+					<input type="hidden" name="_next" value="https://onixgestaocontabil.com.br/obrigado.html">
+					<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
-	<input name="nome" type="text" class="form-control" id="contato-nome" placeholder="Nome" aria-label="Nome" required autocomplete="name">
-	<input name="email" type="email" class="form-control" id="contato-email" placeholder="E-mail" aria-label="E-mail" required autocomplete="email">
-	<textarea name="mensagem" rows="5" class="form-control" id="contato-mensagem" placeholder="Mensagem" aria-label="Mensagem" required></textarea>
-	<div class="col-md-6 col-sm-10">
-		<input type="submit" class="form-control" id="contato-enviar" value="ENVIAR">
-	</div>
-</form>
+					<input name="nome" type="text" class="form-control" id="nome" placeholder="Nome" aria-label="Nome"
+					       required autocomplete="name">
+					<input name="empresa" type="text" class="form-control" id="empresa" placeholder="Empresa" aria-label="Empresa"
+					       autocomplete="organization">
+					<input name="telefone" type="tel" class="form-control" id="telefone" placeholder="Telefone (DDD + número)" aria-label="Telefone"
+					       required autocomplete="tel" inputmode="tel" pattern="[0-9\s\(\)\+\-]{10,}">
+					<input name="email" type="email" class="form-control" id="email" placeholder="E-mail" aria-label="E-mail"
+					       required autocomplete="email">
+
+					<div class="col-md-offset-6 col-md-6 col-sm-offset-1 col-sm-10">
+						<input type="submit" class="form-control" id="submit" value="REGISTRAR">
+					</div>
+				</form>
 			</div>
 
 			<div class="col-md-1"></div>
@@ -520,7 +529,6 @@
 		</div>
 	</div>
 </section>
-
 
 
 <!-- =========================
@@ -670,22 +678,27 @@
 					<div class="section-title">
 						<h2>Contato</h2>
 					</div>
-<form action="enviar.php" method="post">
-	<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+					<form action="https://formsubmit.co/emersonduraes@hotmail.com" method="post">
+						<input type="hidden" name="_subject" value="Nova mensagem pelo site - Onix Gestão Contábil">
+						<input type="hidden" name="_captcha" value="false">
+						<input type="hidden" name="_next" value="https://onixgestaocontabil.com.br/obrigado.html">
+						<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
-	<input name="nome" type="text" class="form-control" id="contato-nome" placeholder="Nome" aria-label="Nome" required autocomplete="name">
-	<input name="email" type="email" class="form-control" id="contato-email" placeholder="E-mail" aria-label="E-mail" required autocomplete="email">
-	<textarea name="mensagem" rows="5" class="form-control" id="contato-mensagem" placeholder="Mensagem" aria-label="Mensagem" required></textarea>
-	<div class="col-md-6 col-sm-10">
-		<input type="submit" class="form-control" id="contato-enviar" value="ENVIAR">
-	</div>
-</form>
+						<input name="nome" type="text" class="form-control" id="contato-nome" placeholder="Nome" aria-label="Nome" required autocomplete="name">
+						<input name="email" type="email" class="form-control" id="contato-email" placeholder="E-mail" aria-label="E-mail" required autocomplete="email">
+						<textarea name="mensagem" rows="5" class="form-control" id="contato-mensagem" placeholder="Mensagem" aria-label="Mensagem" required></textarea>
+						<div class="col-md-6 col-sm-10">
+							<input type="submit" class="form-control" id="contato-enviar" value="ENVIAR">
+						</div>
+					</form>
 				</div>
 			</div>
 
 		</div>
 	</div>
 </section>
+
+
 <!-- =========================
     WHATSAPP (botão flutuante)
 ============================== -->
@@ -736,3 +749,4 @@
 
 </body>
 </html>
+
