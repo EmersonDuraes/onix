@@ -18,7 +18,7 @@ if ($nome === '' || !$email || $mensagem === '') {
 }
 
 $para      = 'duraes10duraes@gmail.com';
-$remetente = 'contato@onixgestaocontabil.com.br'; // e-mail criado no seu domínio
+$remetente = 'duraes10duraes@gmail.com'; // e-mail criado no seu domínio
 $assunto   = 'Nova mensagem pelo site - Onix Gestão Contábil';
 
 $corpo  = "Nome: $nome\n";
