@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Onix Gestão Contábil</title>
+<meta name="description" content="Onix Gestão Contábil: abertura de empresas, planejamento tributário, escrituração fiscal e contábil, folha de pagamento, imposto de renda e consultoria financeira em São Paulo.">
+<meta name="author" content="Onix Gestão Contábil">
+<meta name="theme-color" content="#0f2c57">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512x512.png">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" type="text/css">
+
+<!-- =========================================================
+     AJUSTES DA ONIX (ficam depois do style.css de propósito)
+========================================================== -->
+<style>
+  /* ---------- Abertura: vídeo cobrindo a tela inteira + texto corrente ---------- */
+  #inicio.intro-section,.intro-section{position:relative !important;display:block !important;width:100% !important;max-width:none !important;
+    height:100vh !important;height:100dvh !important;min-height:420px !important;margin:0 !important;padding:0 !important;
+    overflow:hidden !important;background:#0f2c5700 !important}
+  .intro-section .video-bg,.video-bg{position:absolute !important;top:0 !important;left:0 !important;right:auto !important;bottom:auto !important;
+    width:100% !important;height:100% !important;min-width:100% !important;min-height:100% !important;max-width:none !important;max-height:none !important;
+    margin:0 !important;padding:0 !important;transform:none !important;object-fit:cover !important;object-position:center !important}
+  .intro-section::before{content:"";position:absolute;inset:0;background:rgba(15, 44, 87, 0);z-index:1}
+  .texto-corrente{position:absolute;left:0;right:0;top:50%;bottom:auto;transform:translateY(-50%);z-index:2;overflow:hidden;padding:clamp(20px,4vw,40px) 0;
+    background:rgba(15, 44, 87, 0);border-top:2px solid #ffffff00;border-bottom:2px solid #ffffff00}
+  .texto-corrente__faixa{display:flex;width:max-content;animation:corrente 28s linear infinite}
+  .texto-corrente__faixa span{flex:none;padding-right:60px;white-space:nowrap;color:#fff;font-weight:900;
+    font-family:"Montserrat","Arial Black",Impact,sans-serif;font-size:clamp(2.6rem,9vw,7rem);line-height:1.1;letter-spacing:3px;text-transform:uppercase;
+    text-shadow:0 3px 0 #2f86c401,0 6px 18px rgba(0,0,0,.55)}
+  @keyframes corrente{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .texto-corrente:hover .texto-corrente__faixa{animation-play-state:paused}
+  @media (prefers-reduced-motion:reduce){.texto-corrente__faixa{animation-duration:90s}}
+
+  /* ---------- Marketplace (parallax) ---------- */
+  #marketplace{position:relative;overflow:hidden;padding:9rem 0;background:#0a1f40;color:#fff}
+  #marketplace .mk-bg{position:absolute;inset:0;background:url('images/marketplace-bg.jpg') center/cover no-repeat fixed}
+  #marketplace .container{position:relative;z-index:1}
+  .mk-head{text-align:center;max-width:680px;margin:0 auto 70px}
+  .mk-kicker{display:block;font-size:13px;font-weight:600;letter-spacing:4px;color:#7cc0ee;margin-bottom:10px}
+  .mk-head p{font-size:18px;color:#dbe9f7;margin:0}
+  .mk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;align-items:stretch}
+  .mk-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:38px 30px 30px;border-radius:22px;background:rgba(255,255,255,.08);
+    -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 20px 50px rgba(0,0,0,.28);
+    transform:translateY(var(--py,0px));transition:background .3s,box-shadow .3s;will-change:transform}
+  .mk-card:hover{background:rgba(255,255,255,.15);box-shadow:0 26px 60px rgba(47,134,196,.35)}
+  .mk-num{position:absolute;top:18px;right:24px;font-family:"Montserrat",sans-serif;font-weight:900;font-size:54px;line-height:1;color:rgba(124,192,238,.22)}
+  .mk-card>.fa{display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:18px;font-size:28px;color:#fff;
+    background:linear-gradient(135deg,#2f86c4,#5aa6dc);margin-bottom:22px;box-shadow:0 10px 24px rgba(47,134,196,.45)}
+  .mk-card h3{font-size:22px;font-weight:700;color:#fff;margin:0 0 10px}
+  .mk-card p{font-size:15px;line-height:1.6;color:#dbe9f7;margin:0 0 22px;flex:1 1 auto}
+  .mk-link{display:inline-block;padding:10px 22px;border-radius:30px;background:#2f86c4;color:#fff;font-weight:600;font-size:14px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:background .25s,transform .25s}
+  .mk-link:hover,.mk-link:focus{background:#4aa3df;color:#fff;transform:translateX(4px);text-decoration:none}
+  @media (max-width:991px){
+    #marketplace{padding:5rem 0}
+    #marketplace .mk-bg{background-attachment:scroll}
+    .mk-grid{grid-template-columns:repeat(2,1fr);gap:22px}
+    .mk-head{margin-bottom:44px}
+  }
+  @media (max-width:575px){
+    .mk-grid{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){.mk-card{transform:none !important}}
+
+  /* ---------- Mapa responsivo ---------- */
+  #venue{padding:0}
+  .mapa-container{width:100%;line-height:0}
+  .mapa-container iframe{display:block;width:100%;height:450px;border:0}
+  @media (max-width:767px){.mapa-container iframe{height:340px}}
+
+
+
+  /* ---------- Serviços: 9 barras verticais com parallax ---------- */
+  #program{padding-top:9rem;padding-bottom:9rem;color:#fff;background:#0a1f40 !important;background-attachment:scroll !important}
+  #program .section-title h2{color:#fff;letter-spacing:3px}
+  #program .section-title h2::after{content:"";display:block;width:70px;height:4px;border-radius:2px;background:linear-gradient(90deg,#2f86c4,#7cc0ee);margin:18px auto 0}
+  #program .section-title p{color:#d3e3f9;font-size:16px}
+
+  .svc-bars{display:flex;width:100%;height:640px;margin-top:40px}
+  .svc-bar{position:relative;flex:1 1 0;min-width:0;overflow:hidden;cursor:pointer;outline:none;
+    background:#0f2c57;
+    border-left:1px solid rgba(255,255,255,.22);transition:flex .7s cubic-bezier(.2,.8,.2,1)}
+  .svc-bar:first-child{border-left:0}
+  /* imagem de cada barra (servico-1.jpg ... servico-9.jpg); se faltar, usa servicos-bg.jpg */
+  .svc-img{position:absolute;left:0;right:0;top:-14%;height:128%;z-index:0;
+    background:var(--img) center center / cover no-repeat,url('images/servicos-bg.jpg') center center / cover no-repeat;
+    transform:translateY(var(--py,0px));will-change:transform;transition:top .6s ease,height .6s ease}
+  .svc-bar::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(8,24,54,.48);transition:background .5s ease}
+  .svc-bar:nth-child(even)::before{background:rgba(24,72,140,.42)}
+  .svc-bar:hover::before,.svc-bar.ativo::before,.svc-bar:focus-visible::before{background:rgba(8,24,54,.25)}
+  /* barra aberta: largura na proporção da imagem (1000x1200) para mostrar a foto inteira */
+  .svc-bar.ativo{flex:0 0 min(533px,52vw)}
+  .svc-bar.ativo .svc-img{top:0;height:100%;transform:none;
+    background:var(--img) center center / contain no-repeat,#0f2c57}
+  .svc-bar.ativo::before{background:linear-gradient(to top,rgba(8,24,54,.88) 0%,rgba(8,24,54,.55) 28%,rgba(8,24,54,0) 55%)}
+  .svc-bar:focus-visible{box-shadow:inset 0 0 0 3px #7cc0ee}
+
+  .svc-num{position:absolute;top:26px;left:0;right:0;text-align:center;font-size:15px;font-weight:600;letter-spacing:3px;color:#7cc0ee;z-index:2}
+  .svc-label{position:absolute;left:50%;bottom:34px;z-index:2;white-space:nowrap;font-size:17px;font-weight:600;letter-spacing:1px;color:#fff;
+    writing-mode:vertical-rl;transform:translateX(-50%) rotate(180deg);transition:opacity .35s ease;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+  .svc-bar.ativo .svc-label{opacity:0}
+
+  .svc-detail{position:absolute;left:34px;bottom:34px;width:min(340px,calc(100% - 68px));z-index:2;opacity:0;transform:translateY(24px);
+    transition:opacity .4s ease,transform .5s ease}
+  .svc-bar.ativo .svc-detail{opacity:1;transform:none;transition-delay:.25s}
+  .svc-detail img{display:block;width:84px;height:84px;margin:0 0 14px;padding:0;border-radius:50%;box-shadow:0 8px 22px rgba(0,0,0,.4)}
+  .svc-detail h3{margin:0 0 8px;padding:0;font-size:22px;line-height:30px;font-weight:600;color:#fff}
+  .svc-detail p{margin:0;font-size:15px;line-height:24px;color:#d3e3f9}
+
+  #program .svc-cta{display:inline-block;margin-top:56px;padding:15px 42px;border-radius:100px;border:2px solid #fff;color:#fff;
+    font-size:13px;font-weight:600;letter-spacing:2px;transition:all .4s ease-in-out}
+  #program .svc-cta:hover{background:#fff;color:#0f2c57}
+
+  /* tablet e celular: barras viram faixas horizontais empilhadas */
+  @media (max-width:991px){
+    .svc-bars{flex-direction:column;height:auto}
+    .svc-bar{flex:none;height:72px;border-left:0;border-top:1px solid rgba(255,255,255,.22);transition:height .5s ease}
+    .svc-bar:first-child{border-top:0}
+    .svc-bar.ativo{flex:none;height:min(120vw,560px)}
+    .svc-bar.ativo::before{background:linear-gradient(to bottom,rgba(8,24,54,.85) 0,rgba(8,24,54,0) 20%,rgba(8,24,54,0) 55%,rgba(8,24,54,.92) 100%)}
+    .svc-num{top:0;bottom:0;left:22px;right:auto;display:flex;align-items:center;height:72px}
+    .svc-label{writing-mode:horizontal-tb;transform:none;left:70px;bottom:auto;top:0;height:72px;display:flex;align-items:center;font-size:16px;white-space:normal;max-width:calc(100% - 90px)}
+    .svc-bar.ativo .svc-label{opacity:1}
+    .svc-detail{left:22px;right:22px;top:auto;bottom:20px;width:auto;display:grid;grid-template-columns:64px 1fr;column-gap:16px;align-items:center}
+    .svc-detail img{grid-row:1 / span 2;width:64px;height:64px;margin:0}
+    .svc-detail h3{display:none}
+    .svc-detail p{font-size:14.5px}
+    #program{padding-top:6rem;padding-bottom:6rem}
+  }
+
+  /* ---------- Logo do menu ---------- */
+  .navbar-header img{max-height:60px;width:auto}
+
+  /* ---------- Botão flutuante do WhatsApp ---------- */
+  .btn-whats{position:fixed;bottom:20px;right:20px;width:64px;height:64px;z-index:9999;display:block;
+    filter:drop-shadow(0 4px 8px rgba(0,0,0,.35));transition:transform .3s ease}
+  .btn-whats:hover{transform:scale(1.1)}
+  .btn-whats img{width:100%;height:100%;display:block}
+
+  /* ---------- Vídeos em círculos ---------- */
+  .onix-videos{--azul:#0f2c57;--texto:#2c3e57;
+    padding:56px 16px;background:linear-gradient(135deg,#f2f5f8 0%,#d5dbe367 100%);
+    font-family:"Segoe UI",Roboto,Arial,sans-serif;box-sizing:border-box}
+  .onix-videos *{box-sizing:border-box}
+  .onix-videos__topo{max-width:1100px;margin:0 auto 40px;text-align:center}
+  .onix-videos__topo h2{margin:0 0 10px;font-size:clamp(1.6rem,4vw,2.4rem);color:var(--azul);line-height:1.2}
+  .onix-videos__topo p{margin:0 auto;max-width:640px;font-size:clamp(1rem,2.2vw,1.15rem);color:var(--texto);line-height:1.5}
+  .onix-videos__topo::after{content:"";display:block;width:90px;height:6px;border-radius:3px;background:var(--azul);margin:20px auto 0}
+
+  /* círculos: 6 por linha > 3 por linha > 2 por linha */
+  .onix-videos__grade{margin:0 auto;display:grid;gap:34px 26px;justify-content:center;
+    grid-template-columns:repeat(6,minmax(0,180px))}
+  @media (max-width:1023px){.onix-videos__grade{grid-template-columns:repeat(3,minmax(0,180px))}}
+  @media (max-width:560px){.onix-videos{padding:40px 12px}
+    .onix-videos__grade{grid-template-columns:repeat(2,minmax(0,160px));gap:28px 20px}}
+
+  .onix-bolha{all:unset;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer;text-align:center}
+  .onix-bolha:focus-visible .onix-bolha__anel{outline:4px solid #7cc0ee;outline-offset:4px}
+  .onix-bolha__anel{position:relative;display:block;width:100%;aspect-ratio:1/1;border-radius:50%;padding:6px;
+    background:linear-gradient(135deg,#2d63aa,#0c2650);box-shadow:0 10px 24px rgba(15,44,87,.35);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .onix-bolha:hover .onix-bolha__anel{transform:scale(1.06);box-shadow:0 14px 30px rgba(15,44,87,.45)}
+  .onix-bolha__anel img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid #fff;background:#0f2c57}
+  /* ícone de play pequeno no canto (não cobre o rosto) */
+  .onix-bolha__play{position:absolute;right:2%;bottom:2%;width:32%;aspect-ratio:1/1;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;background:#0f2c57;border:3px solid #fff;
+    box-shadow:0 3px 8px rgba(0,0,0,.4);transition:background .25s ease}
+  .onix-bolha:hover .onix-bolha__play{background:#1d4a87}
+  .onix-bolha__play svg{width:56%;height:56%;fill:#fff;margin-left:8%}
+  .onix-bolha__legenda{font-size:.95rem;font-weight:700;letter-spacing:1.5px;color:var(--azul)}
+
+  /* janela do vídeo */
+  .onix-modal{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;
+    background:rgba(8,20,40,.88);padding:16px}
+  .onix-modal.aberto{display:flex}
+  .onix-modal__caixa{position:relative;width:min(92vw,calc(88vh * 9 / 16));max-width:480px}
+  .onix-modal video{display:block;width:100%;height:auto;max-height:88vh;aspect-ratio:9/16;object-fit:contain;
+    background:#000;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+  .onix-modal__fechar{position:absolute;top:-14px;right:-14px;width:42px;height:42px;border:0;border-radius:50%;
+    background:#fff;color:#0f2c57;font-size:26px;line-height:1;font-weight:700;cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,.45)}
+  .onix-modal__fechar:hover{background:#e9eef4}
+  @media (max-width:560px){.onix-modal__fechar{top:-50px;right:0}}
+
+  /* ---------- Responsivo geral ---------- */
+  img,video,iframe{max-width:100%}
+  .go-top{right:auto !important;left:20px}   /* sai da frente do botão do WhatsApp */
+  @media (max-width:1024px){
+    .parallax-section,#register,#contact{background-attachment:scroll !important}
+  }
+  @media (max-width:991px){
+    #overview,#register{padding-top:9rem;padding-bottom:9rem}
+    #detail,#contact,footer{padding-top:7rem;padding-bottom:7rem}
+    #faq,#sponsors{padding-top:6rem;padding-bottom:6rem}
+    #detail .col-md-4{margin-bottom:34px}
+    #contact .contact_detail{padding:4rem 3rem 5rem}
+  }
+  @media (max-width:768px){
+    h1{font-size:30px}
+    h2{font-size:24px}
+    h3{font-size:19px;line-height:28px}
+    #overview,#register{padding-top:6rem;padding-bottom:6rem}
+    #detail,#contact,footer,#faq,#sponsors{padding-top:5rem;padding-bottom:5rem}
+    #overview img{padding-top:24px;padding-bottom:0}
+    #register form{padding-top:20px}
+    #contact .contact_des{padding-right:0;padding-top:0}
+    #contact .contact_detail{padding:3rem 1.6rem 4rem;margin-top:40px}
+    #sponsors img{margin-top:14px;padding-top:0}
+    .navbar-header img{max-height:44px}
+    .btn-whats{width:56px;height:56px;right:14px;bottom:14px}
+    .go-top{width:48px;height:48px;line-height:48px;font-size:26px;left:14px;bottom:14px}
+    .social-icon li a{width:44px;height:44px;line-height:44px}
+  }
+  @media (max-width:420px){
+    .container{padding-left:18px;padding-right:18px}
+    .svc-label{letter-spacing:0}
+  }
+
+  /* ---------- Registre sua empresa: ficha + trilha ---------- */
+  #register{padding-top:11rem;padding-bottom:11rem;color:#fff;
+    background:linear-gradient(135deg,rgba(8,24,54,.82),rgba(18,58,115,.6)),url('images/servicos-bg.jpg') center center / cover fixed #0a1f40 !important;
+    background-attachment:fixed !important}
+  #register h2{color:#fff;letter-spacing:2px;margin:0 0 18px}
+  #register h2::after{content:"";display:block;width:70px;height:4px;border-radius:2px;background:linear-gradient(90deg,#2f86c4,#7cc0ee);margin-top:16px}
+  #register .reg-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+  #register .reg-lead{color:#d3e3f9;font-size:16px;line-height:28px;max-width:540px;margin:0}
+
+  .reg-trilha{position:relative;list-style:none;margin:40px 0 0;padding:0}
+  .reg-trilha::before,.reg-trilha::after{content:"";position:absolute;left:22px;top:22px;bottom:50px;width:3px;border-radius:2px}
+  .reg-trilha::before{background:rgba(255,255,255,.2)}
+  .reg-trilha::after{background:linear-gradient(#2f86c4,#7cc0ee);height:0;bottom:auto;transition:height 2.2s ease .4s}
+  .reg-trilha.on::after{height:calc(100% - 72px)}
+  .reg-passo{position:relative;padding:0 0 30px 72px;opacity:0;transform:translateX(-26px);transition:opacity .7s ease,transform .7s ease}
+  .reg-trilha.on .reg-passo{opacity:1;transform:none}
+  .reg-trilha.on .reg-passo:nth-child(1){transition-delay:.2s}
+  .reg-trilha.on .reg-passo:nth-child(2){transition-delay:.7s}
+  .reg-trilha.on .reg-passo:nth-child(3){transition-delay:1.2s}
+  .reg-trilha.on .reg-passo:nth-child(4){transition-delay:1.7s}
+  .reg-passo b{position:absolute;z-index:2;left:0;top:0;width:46px;height:46px;border-radius:50%;background:#0f2c57;border:3px solid #7cc0ee;
+    color:#7cc0ee;display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+  #register .reg-passo h4{margin:2px 0 4px;color:#fff;font-size:17px;font-weight:600}
+  #register .reg-passo p{margin:0;color:#c9daf2;font-size:14px;line-height:22px}
+
+  .ficha{position:relative;background:#fff;border-radius:18px;box-shadow:0 34px 70px rgba(0,0,0,.45);color:#0f2c57}
+  .ficha-topo{position:relative;height:124px;padding:26px 34px 0;border-radius:18px 18px 0 0;background:linear-gradient(135deg,#0f2c57,#1d4a87)}
+  .ficha-topo small{display:block;font-size:11px;font-weight:600;letter-spacing:4px;color:#9ec2ff}
+  .ficha-topo strong{display:block;margin-top:8px;font-size:26px;line-height:34px;font-weight:600;color:#fff}
+  .ficha-selo{position:absolute;right:-16px;top:-30px;width:104px;height:104px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 35% 30%,#e3f3fc,#5aa6dc 55%,#2f6fa8);color:#0f2c57;font-weight:800;transform:rotate(12deg);
+    border:4px dashed rgba(15,44,87,.4);box-shadow:0 12px 26px rgba(0,0,0,.4)}
+  .ficha-selo span{font-size:24px;letter-spacing:1px;line-height:1}
+  .ficha-selo em{font-style:normal;font-size:9px;letter-spacing:2px;margin-top:4px}
+  .ficha-corpo{position:relative;padding:34px 34px 28px;border-top:2px dashed #c9d6e6}
+  .ficha-corpo::before,.ficha-corpo::after{content:"";position:absolute;top:-17px;width:32px;height:32px;border-radius:50%;background:#0d2347;box-shadow:inset 0 2px 5px rgba(0,0,0,.5)}
+  .ficha-corpo::before{left:-17px}.ficha-corpo::after{right:-17px}
+  .ficha label{display:block;margin:0;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4a6a96}
+  #register .ficha .form-control{display:block;width:100%;height:46px;margin:0 0 16px;padding:0 2px;background:transparent;border:0;border-bottom:2px solid #d5dfec;
+    border-radius:0;box-shadow:none;color:#0f2c57;font-size:16px;transition:border-color .3s ease}
+  #register .ficha .form-control:focus{border-bottom-color:#2f86c4;outline:none;box-shadow:none}
+  #register .ficha .form-control::placeholder{color:#a3b4cb}
+  #register .ficha .form-status{min-height:22px;margin:0 0 8px;font-size:14px}
+  .ficha-btn{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;height:58px;border:0;border-radius:14px;cursor:pointer;
+    background:linear-gradient(90deg,#0f2c57,#1d4a87);color:#fff;font-size:14px;font-weight:600;letter-spacing:2px;
+    box-shadow:0 12px 24px rgba(15,44,87,.35);transition:transform .3s ease,background .3s ease,color .3s ease}
+  .ficha-btn:hover{background:linear-gradient(90deg,#2f86c4,#5aa6dc);color:#fff;transform:translateY(-2px)}
+  .ficha-btn .fa{transition:transform .3s ease}.ficha-btn:hover .fa{transform:translateX(6px)}
+  .ficha-btn:disabled{opacity:.7;cursor:wait}
+  #register .ficha-nota{margin:14px 0 0;text-align:center;font-size:12.5px;color:#7a8ca6}
+  @media (max-width:1024px){#register{background-attachment:scroll !important}}
+  @media (max-width:991px){#register .reg-grid{grid-template-columns:1fr;gap:56px}#register{padding-top:8rem;padding-bottom:8rem}}
+  @media (max-width:600px){#register{padding-top:6rem;padding-bottom:6rem}
+    .ficha-topo{padding:24px 22px 0;height:118px}.ficha-topo strong{font-size:22px;line-height:30px}
+    .ficha-selo{right:-6px;top:-34px;width:84px;height:84px}.ficha-selo span{font-size:19px}
+    .ficha-corpo{padding:30px 22px 24px}.ficha-btn{font-size:12.5px;letter-spacing:1px}
+    .reg-passo{padding-left:64px}}
+
+  /* ---------- Contato e Localização ---------- */
+  #contact{padding-top:11rem;padding-bottom:11rem;color:#fff;
+    background:linear-gradient(135deg,rgba(8,24,54,.84),rgba(18,58,115,.62)),url('images/servicos-bg.jpg') center center / cover fixed #0a1f40 !important;
+    background-attachment:fixed !important}
+  #contact .ctt-topo{text-align:center;max-width:720px;margin:0 auto 50px}
+  #contact .ctt-topo h2{color:#fff;letter-spacing:2px;margin:0 0 16px}
+  #contact .ctt-topo h2::after{content:"";display:block;width:70px;height:4px;border-radius:2px;background:linear-gradient(90deg,#2f86c4,#7cc0ee);margin:16px auto 0}
+  #contact .ctt-topo p{color:#d3e3f9;font-size:16px;line-height:28px;margin:0}
+  #contact .ctt-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:stretch}
+  #contact .ctt-mapa{border-radius:20px;overflow:hidden;border:0;box-shadow:0 20px 50px rgba(0,0,0,.28);background:#dfe8f3;min-height:480px;line-height:0}
+  #contact .ctt-mapa iframe{display:block;width:100%;height:100%;min-height:480px;border:0}
+  #contact .ctt-info{padding:10px 6px 10px 18px;border:0;background:none;box-shadow:none;display:flex;flex-direction:column;justify-content:center}
+  #contact .ctt-info h3{margin:0 0 26px;color:#fff;font-size:22px;line-height:30px;font-weight:600}
+  #contact .ctt-lista{list-style:none;margin:0;padding:0}
+  #contact .ctt-lista li{display:flex;gap:16px;align-items:flex-start;margin:0 0 22px}
+  #contact .ctt-lista .fa{flex:none;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:rgba(124,192,238,.16);color:#7cc0ee;font-size:20px;box-shadow:none}
+  #contact .ctt-lista strong{display:block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#9ec2ff;margin-bottom:3px}
+  #contact .ctt-lista span{display:block;font-size:16px;line-height:25px;color:#fff}
+  #contact .ctt-lista a{color:#fff;text-decoration:none;border:0;transition:color .3s}
+  #contact .ctt-lista a:hover{color:#7cc0ee}
+  #contact .ctt-botoes{display:flex;flex-direction:column;gap:12px;margin-top:30px}
+  #contact .ctt-btn{flex:none;display:flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 20px;border-radius:100px;
+    font-size:13px;font-weight:600;letter-spacing:1.5px;text-decoration:none;transition:all .35s ease}
+  #contact .ctt-btn--ouro{background:#2f86c4;color:#fff;box-shadow:none}
+  #contact .ctt-btn--ouro:hover{background:#4aa3df;transform:translateY(-2px);color:#fff}
+  #contact .ctt-btn--linha{border:0;background:rgba(255,255,255,.12);color:#fff}
+  #contact .ctt-btn--linha:hover{background:rgba(255,255,255,.22);color:#fff}
+  @media (max-width:1024px){#contact{background-attachment:scroll !important}}
+  @media (max-width:991px){
+    #contact .ctt-info{padding:0}
+    #contact{padding-top:8rem;padding-bottom:8rem}
+    #contact .ctt-grid{grid-template-columns:1fr;gap:28px}
+    #contact .ctt-mapa,#contact .ctt-mapa iframe{min-height:360px}
+  }
+  @media (max-width:600px){
+    #contact{padding-top:6rem;padding-bottom:6rem}
+    #contact .ctt-info{padding:0}
+    #contact .ctt-mapa,#contact .ctt-mapa iframe{min-height:320px}
+  }
+
+  /* ---------- Títulos dos serviços padronizados (mesma fonte, peso e tamanho) ---------- */
+  :root{--titulo-servico:20px}
+  .mk-card h3,.svc-label,.svc-detail h3{font-family:"Poppins",Arial,sans-serif;font-size:var(--titulo-servico);font-weight:600;line-height:1.3;letter-spacing:.3px;text-transform:none;color:#fff}
+  .mk-card h3{min-height:2.6em;margin:0 0 10px}
+  @media (max-width:575px){:root{--titulo-servico:18px}.mk-card h3{min-height:0}}
+
+  /* ---------- Títulos de seção padronizados (mesma fonte e tamanho em todo o site) ---------- */
+  .titulo-secao{font-family:"Montserrat","Arial Black",Arial,sans-serif !important;font-weight:900 !important;
+    font-size:clamp(1.7rem,4.2vw,2.6rem) !important;line-height:1.15 !important;letter-spacing:2px !important;text-transform:uppercase !important;
+    text-shadow:none !important;margin-top:0 !important;margin-bottom:18px !important;padding-bottom:0 !important;color:#0f2c57}
+  #marketplace .titulo-secao,#program .titulo-secao,#register .titulo-secao,#contact .titulo-secao{color:#fff !important}
+</style>
+
+</head>
+<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+
+<!-- =========================
+     PRE LOADER
+============================== -->
+<div class="preloader">
+	<div class="sk-rotating-plane"></div>
+</div>
+
+
+<!-- =========================
+     NAVIGATION LINKS
+============================== -->
+<div class="navbar navbar-fixed-top custom-navbar" role="navigation">
+	<div class="container">
+
+		<!-- navbar header -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Abrir menu">
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+			</button>
+			<a href="#inicio" class="smoothScroll"><img src="images/logo.png" alt="Onix Gestão Contábil"></a>
+		</div>
+
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#inicio" class="smoothScroll">Home</a></li>
+				<li><a href="#overview" class="smoothScroll">Escritório</a></li>
+				<li><a href="#marketplace" class="smoothScroll">Marketplace</a></li>
+				<li><a href="#program" class="smoothScroll">Serviços</a></li>
+				<li><a href="#videos" class="smoothScroll">Depoimentos</a></li>
+				<li><a href="#sponsors" class="smoothScroll">Parceiros</a></li>
+				<li><a href="#register" class="smoothScroll">Registre</a></li>
+				<li><a href="#contact" class="smoothScroll">Contato</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+
+<!-- =========================
+     INTRO (vídeo de fundo + texto corrente)
+============================== -->
+<section id="inicio" class="intro-section">
+	<video autoplay loop muted playsinline preload="auto" class="video-bg" aria-hidden="true">
+		<source src="images/intro-bg.mp4" type="video/mp4">
+		Seu navegador não suporta vídeos HTML5.
+	</video>
+
+	<div class="texto-corrente" role="marquee" aria-label="Onix Gestão Contábil: abertura de empresas, planejamento tributário, folha de pagamento e consultoria financeira">
+		<div class="texto-corrente__faixa" aria-hidden="true">
+			<span>Onix Gestão Contábil &bull; Abertura de Empresas &bull; Planejamento Tributário &bull; Folha de Pagamento &bull; Consultoria Financeira &bull;</span>
+			<span>Onix Gestão Contábil &bull; Abertura de Empresas &bull; Planejamento Tributário &bull; Folha de Pagamento &bull; Consultoria Financeira &bull;</span>
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    OVERVIEW SECTION
+============================== -->
+<section id="overview" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.6s">
+				<h3 class="titulo-secao">Nosso Escritório</h3>
+				<p>Fundada no ano 2000 no bairro de Itaquera, nossos primeiros clientes incluíam Fábrica de Joias na Praça da Sé e as Óticas da Rua São Bento, no centro de São Paulo. </p>
+				<p>Ao longo dos anos, a Onix Contabilidade foi ampliando sua carteira em diversas atividades, chegando rapidamente a 200 clientes de diversos ramos empresariais.</p>
+        <p>Com o passar do tempo, a Onix Contabilidade precisou abrir mais dois escritórios e aumentar sua equipe, devido à sua demanda e ao seu crescimento.</p>
+        <p>Hoje, a Onix Contabilidade atua em todos os municípios da Grande São Paulo e também em oito estados brasileiros.</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.9s">
+				<img src="images/overview-img.jpg" class="img-responsive" alt="Escritório Onix Gestão Contábil">
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    DETAIL SECTION
+============================== -->
+<section id="detail" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInLeft col-md-4 col-sm-4" data-wow-delay="0.3s">
+				<i class="fa fa-group"></i>
+				<h3>Clientes e Resultados</h3>
+				<p>Transformamos a gestão financeira de empresas de diversos setores, garantindo conformidade e crescimento sustentável para cada negócio.</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.6s">
+				<i class="fa fa-clock-o"></i>
+				<h3>Pontualidade e Agilidade</h3>
+				<p>Cumprimos prazos à risca para que a sua empresa fique sempre em total conformidade com a lei, sem surpresas ou multas.</p>
+			</div>
+
+			<div class="wow fadeInRight col-md-4 col-sm-4" data-wow-delay="0.9s">
+				<i class="fa fa-microphone"></i>
+				<h3>Conteúdo Educativo</h3>
+				<p>Compartilhamos dicas essenciais sobre gestão, planejamento tributário e legislação para que você tenha total clareza e controle na hora de tomar decisões no seu negócio.</p>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    VIDEO SECTION
+============================== -->
+<section id="marketplace">
+	<div class="mk-bg" aria-hidden="true"></div>
+	<div class="container">
+		<header class="mk-head wow fadeInUp" data-wow-delay="0.3s">
+			<h2 class="titulo-secao">Marketplace</h2>
+			<p>Escolha o serviço que sua empresa precisa e fale com a nossa equipe.</p>
+		</header>
+		<div class="mk-grid">
+			<article class="mk-card" data-speed="0.12">
+				<i class="fa fa-building-o" aria-hidden="true"></i>
+				<h3>Conciliação Financeira de Repasses</h3>
+				<p>Cruzamento de vendas com os depósitos do Mercado Livre, Shopee e Amazon para identificar taxas erradas e quebras de caixa.</p>
+				
+			</article>
+			<article class="mk-card" data-speed="0.12">
+				<i class="fa fa-line-chart" aria-hidden="true"></i>
+				<h3>Comissões e Fretes</h3>
+				<p>Dedução correta de tarifas e fretes da base de cálculo para você não pagar imposto sobre dinheiro que não entrou na sua conta.</p>
+			</article>
+			<article class="mk-card" data-speed="0.12">
+				<i class="fa fa-users" aria-hidden="true"></i>
+				<h3>Operações de Fulfillment</h3>
+				<p>Controle fiscal e emissão de notas fiscais para transferência e armazenamento de estoque nos galpões das plataformas.</p>
+				
+			</article>
+			<article class="mk-card" data-speed="0.12">
+				<i class="fa fa-calculator" aria-hidden="true"></i>
+				<h3>Gestão Multicanal (ERPs)</h3>
+				<p>Integração automática com Bling, Tiny e hubs de automação para centralizar o faturamento de múltiplas contas sem duplicar dados.</p>
+				
+			</article>
+			<article class="mk-card" data-speed="0.12">
+				<i class="fa fa-file-text-o" aria-hidden="true"></i>
+				<h3>ICMS e Substituição Tributária</h3>
+				<p>Domínio completo sobre o DIFAL e regras de ST para enviar mercadorias para qualquer estado do Brasil sem risco fiscal.</p>
+				
+			</article>
+			<article class="mk-card" data-speed="0.12">
+				<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+				<h3>Estornos e Logística Reversa</h3>
+				<p>Tratamento ágil de devoluções, cancelamentos e chargebacks para recuperar os impostos de vendas que não foram concluídas.</p>
+				
+			</article>
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    PROGRAM SECTION
+============================== -->
+<section id="program" class="parallax-section">
+	<div class="container">
+		<div class="row">
+			<div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="0.4s">
+				<div class="section-title text-center">
+					<h2 class="titulo-secao">Nossos Serviços</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="svc-bars">
+			<article class="svc-bar ativo" tabindex="0" aria-label="Abertura de Empresas e CNPJ" style="--img:url('images/servico-1.jpg')">
+				<span class="svc-img" aria-hidden="true"></span>
+				<span class="svc-num">01</span>
+				<span class="svc-label">Abertura de Empresas e CNPJ</span>
+				<div class="svc-detail">
+					<img src="images/program-img1.png" alt="" loading="lazy" width="110" height="110">
+					<h3>Abertura de Empresas e CNPJ</h3>
+					<p>Formalização do negócio, natureza jurídica ideal e alvarás.</p>
+				</div>
+			</article>
+
+			<article class="svc-bar" tabindex="0" aria-label="Alteração e Baixa Contratual" style="--img:url('images/servico-2.jpg')">
+				<span class="svc-img" aria-hidden="true"></span>
+				<span class="svc-num">02</span>
+				<span class="svc-label">Alteração e Baixa Contratual</span>
+				<div class="svc-detail">
+					<img src="images/program-img2.png" alt="" loading="lazy" width="110" height="110">
+					<h3>Alteração e Baixa Contratual</h3>
+					<p>Atualização de dados na Junta Comercial ou encerramento da empresa.</p>
+				</div>
+			</article>
+
+			<article class="svc-bar" tabindex="0" aria-label="Planejamento Tributário" style="--img:url('images/servico-3.jpg')">
+				<span class="svc-img" aria-hidden="true"></span>
+				<span class="svc-num">03</span>
+				<span class="svc-label">Planejamento Tributário</span>
+				<div class="svc-detail">
+					<img src="images/program-img3.png" alt="" loading="lazy" width="110" height="110">
+					<h3>Planejamento Tributário</h3>
+					<p>Enquadramento no regime de impostos mais econômico.</p>
+				</div>
+			</article>
+
+			<article class="svc-bar" tabindex="0" aria-label="Escrituração Fiscal" style="--img:url('images/servico-4.jpg')">
+				<span class="svc-img" aria-hidden="true"></span>
+				<span class="svc-num">04</span>
+				<span class="svc-label">Escrituração Fiscal</span>
+				<div class="svc-detail">
+					<img src="images/program-img4.png" alt="" loading="lazy" width="110" height="110">
+					<h3>Escrituração Fiscal</h3>
+					<p>Apuração mensal de impostos e guias dentro do prazo.</p>
+				</div>
+			</article>
+
+			<article class="svc-bar" tabindex="0" aria-label="Escrituração Contábil" style="--img:url('images/servico-5.jpg')">
+				<span class="svc-img" aria-hidden="true"></span>
+				<span class="svc-num">05</span>
+				<span class="svc-label">Escrituração Contábil</span>
+				<div class="svc-detail">
+					<img src="images/program-img5.png" alt="" loading="lazy" width="110" height="110">
+					<h3>Escrituração Contábil</h3>
+					<p>Balanço Patrimonial, DRE e relatórios financeiros.</p>
+				</div>
+			</article>
+
+			<article class="svc-bar" tabindex="0" aria-label="Departamento Pessoal e Folha de Pagamento" style="--img:url('images/servico-6.jpg')">
+				<span class="svc-img" aria-hidden="true"></span>
+				<span class="svc-num">06</span>
+				<span class="svc-label">Departamento Pessoal e Folha de Pagamento</span>
+				<div class="svc-detail">
+					<img src="images/program-img6.png" alt="" loading="lazy" width="110" height="110">
+					<h3>Departamento Pessoal e Folha de Pagamento</h3>
+					<p>Salários, pró-labore, férias, 13º e eSocial.</p>
+				</div>
+			</article>
+
+			<article class="svc-bar" tabindex="0" aria-label="Declaração de Imposto de Renda (PF e PJ)" style="--img:url('images/servico-7.jpg')">
+				<span class="svc-img" aria-hidden="true"></span>
+				<span class="svc-num">07</span>
+				<span class="svc-label">Declaração de Imposto de Renda (PF e PJ)</span>
+				<div class="svc-detail">
+					<img src="images/program-img7.png" alt="" loading="lazy" width="110" height="110">
+					<h3>Declaração de Imposto de Renda (PF e PJ)</h3>
+					<p>Declaração anual de sócios e empresas, sem malha fina.</p>
+				</div>
+			</article>
+
+			<article class="svc-bar" tabindex="0" aria-label="Emissão de Certidões Negativas" style="--img:url('images/servico-8.jpg')">
+				<span class="svc-img" aria-hidden="true"></span>
+				<span class="svc-num">08</span>
+				<span class="svc-label">Emissão de Certidões Negativas</span>
+				<div class="svc-detail">
+					<img src="images/program-img8.png" alt="" loading="lazy" width="110" height="110">
+					<h3>Emissão de Certidões Negativas</h3>
+					<p>Emissão e monitoramento de certidões de regularidade.</p>
+				</div>
+			</article>
+
+			<article class="svc-bar" tabindex="0" aria-label="Consultoria e Gestão Financeira" style="--img:url('images/servico-9.jpg')">
+				<span class="svc-img" aria-hidden="true"></span>
+				<span class="svc-num">09</span>
+				<span class="svc-label">Consultoria e Gestão Financeira</span>
+				<div class="svc-detail">
+					<img src="images/program-img9.png" alt="" loading="lazy" width="110" height="110">
+					<h3>Consultoria e Gestão Financeira</h3>
+					<p>Fluxo de caixa, controle de custos e decisões de crescimento.</p>
+				</div>
+			</article>
+	</div>
+</section>
+
+
+<script>
+(function () {
+  var barras = document.querySelectorAll('.svc-bar');
+  if (!barras.length) { return; }
+  function ativa(alvo) {
+    barras.forEach(function (b) { b.classList.toggle('ativo', b === alvo); });
+  }
+  var imgs = document.querySelectorAll('.svc-img');
+  var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ocupado = false;
+  function parallax() {
+    ocupado = false;
+    imgs.forEach(function (im) {
+      var b = im.parentNode, r = b.getBoundingClientRect();
+      if (reduz || r.bottom < -100 || r.top > window.innerHeight + 100) { return; }
+      var desloc = ((r.top + r.height / 2) - window.innerHeight / 2) * -0.14;
+      var max = b.offsetHeight * 0.13;
+      im.style.setProperty('--py', Math.max(-max, Math.min(max, desloc)).toFixed(1) + 'px');
+    });
+  }
+  function pede() { if (!ocupado) { ocupado = true; requestAnimationFrame(parallax); } }
+  window.addEventListener('scroll', pede, { passive: true });
+  window.addEventListener('resize', pede);
+  parallax();
+  barras.forEach(function (b) {
+    b.addEventListener('mouseenter', function () { if (window.innerWidth > 991) { ativa(b); } });
+    b.addEventListener('click', function () { ativa(b); });
+    b.addEventListener('focus', function () { ativa(b); });
+    b.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ativa(b); }
+    });
+  });
+})();
+</script>
+
+<!-- =========================
+    DEPOIMENTOS - VÍDEOS EM CÍRCULOS
+============================== -->
+<section class="onix-videos" id="videos">
+  <div class="onix-videos__topo">
+    <h2 class="titulo-secao">Depoimentos</h2>
+    <p>Histórias de quem confia no nosso trabalho.</p>
+  </div>
+
+  <div class="onix-videos__grade">
+
+    <button type="button" class="onix-bolha" data-video="images/video-1.mp4" data-capa="images/capa-1.jpg" aria-label="Assistir ao vídeo 1">
+      <span class="onix-bolha__anel">
+        <img src="images/1.png" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+    </button>
+
+    <button type="button" class="onix-bolha" data-video="images/video-2.mp4" data-capa="images/capa-2.jpg" aria-label="Assistir ao vídeo 2">
+      <span class="onix-bolha__anel">
+        <img src="images/2.png" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+    </button>
+
+    <button type="button" class="onix-bolha" data-video="images/video-3.mp4" data-capa="images/capa-3.jpg" aria-label="Assistir ao vídeo 3">
+      <span class="onix-bolha__anel">
+        <img src="images/3.png" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+    </button>
+
+    <button type="button" class="onix-bolha" data-video="images/video-4.mp4" data-capa="images/capa-4.jpg" aria-label="Assistir ao vídeo 4">
+      <span class="onix-bolha__anel">
+        <img src="images/4.png" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+    </button>
+
+    <button type="button" class="onix-bolha" data-video="images/video-5.mp4" data-capa="images/capa-5.jpg" aria-label="Assistir ao vídeo 5">
+      <span class="onix-bolha__anel">
+        <img src="images/5.png" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+    </button>
+
+    <button type="button" class="onix-bolha" data-video="images/video-6.mp4" data-capa="images/capa-6.jpg" aria-label="Assistir ao vídeo 6">
+      <span class="onix-bolha__anel">
+        <img src="images/6.png" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+    </button>
+
+    <!-- VÍDEO 7 (extra): para usar, apague o início e o fim das marcas de comentário
+    <button type="button" class="onix-bolha" data-video="images/video-7.mp4" data-capa="images/capa-7.jpg" aria-label="Assistir ao vídeo 7">
+      <span class="onix-bolha__anel">
+        <img src="images/7.png" alt="" loading="lazy" width="400" height="400">
+        <span class="onix-bolha__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      </span>
+    </button>
+    -->
+
+  </div>
+
+  <!-- Janela que abre o vídeo -->
+  <div class="onix-modal" id="onixModal" role="dialog" aria-modal="true" aria-label="Vídeo">
+    <div class="onix-modal__caixa">
+      <button type="button" class="onix-modal__fechar" id="onixFechar" aria-label="Fechar vídeo">&times;</button>
+      <video id="onixPlayer" controls playsinline preload="none"></video>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var modal = document.getElementById('onixModal');
+  var player = document.getElementById('onixPlayer');
+  var fechar = document.getElementById('onixFechar');
+  var ultimo = null;
+
+  function abrir(btn){
+    ultimo = btn;
+    player.poster = btn.getAttribute('data-capa') || '';
+    player.src = btn.getAttribute('data-video');
+    modal.classList.add('aberto');
+    document.body.style.overflow = 'hidden';
+    var p = player.play();
+    if (p && p.catch) { p.catch(function(){ /* se o navegador bloquear, o usuário usa o botão play */ }); }
+    fechar.focus();
+  }
+  function fecharModal(){
+    player.pause();
+    player.removeAttribute('src');
+    player.load();
+    modal.classList.remove('aberto');
+    document.body.style.overflow = '';
+    if (ultimo) { ultimo.focus(); }
+  }
+
+  document.querySelectorAll('.onix-bolha').forEach(function(b){
+    b.addEventListener('click', function(){ abrir(b); });
+  });
+  fechar.addEventListener('click', fecharModal);
+  modal.addEventListener('click', function(e){ if (e.target === modal) { fecharModal(); } });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && modal.classList.contains('aberto')) { fecharModal(); }
+  });
+})();
+</script>
+
+
+<!-- =========================
+    SPONSORS SECTION
+============================== -->
+<section id="sponsors" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow bounceIn col-md-12 col-sm-12">
+				<div class="section-title">
+					<h2 class="titulo-secao">Parceiros Estratégicos</h2>
+					<p>Trabalhamos de forma integrada com as principais plataformas de gestão, emissão de notas e tecnologia contábil do país.</p>
+				</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-3 col-sm-6 col-xs-6" data-wow-delay="0.3s">
+				<img src="images/sponsor-img1.png" class="img-responsive" alt="Sistemas de Gestão (ERP): Conta Azul, OMIE, Bling">
+			</div>
+
+			<div class="wow fadeInUp col-md-3 col-sm-6 col-xs-6" data-wow-delay="0.6s">
+				<img src="images/sponsor-img2.png" class="img-responsive" alt="Plataformas de Contabilidade e RH: Alterdata, Domínio Sistemas, Tron">
+			</div>
+
+			<div class="wow fadeInUp col-md-3 col-sm-6 col-xs-6" data-wow-delay="0.9s">
+				<img src="images/sponsor-img3.png" class="img-responsive" alt="Bancos e Contas PJ Digitais: Banco Inter, Cora, Nubank PJ">
+			</div>
+
+			<div class="wow fadeInUp col-md-3 col-sm-6 col-xs-6" data-wow-delay="1s">
+				<img src="images/sponsor-img4.png" class="img-responsive" alt="Certificadoras Digitais: Soluti, Certisign">
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<!-- =========================
+   REGISTER SECTION
+============================== -->
+<section id="register" class="parallax-section">
+	<div class="container">
+		<div class="reg-grid">
+
+			<div class="wow fadeInUp reg-info" data-wow-delay="0.4s">
+				<h2 class="titulo-secao">Registre sua empresa</h2>
+				<p class="reg-lead">Abrir um negócio não precisa ser um processo demorado ou estressante. Nossa equipe cuida de todas as etapas burocráticas, do regime tributário mais econômico até a liberação do seu CNPJ, alvarás e licenças.</p>
+
+				<ol class="reg-trilha" id="regTrilha">
+					<li class="reg-passo"><b>01</b><h4>Conversa inicial</h4><p>Entendemos a sua ideia e a atividade da empresa.</p></li>
+					<li class="reg-passo"><b>02</b><h4>Escolha do regime</h4><p>Simples Nacional, Lucro Presumido ou Lucro Real: o mais econômico.</p></li>
+					<li class="reg-passo"><b>03</b><h4>Registro e licenças</h4><p>Junta Comercial, alvarás e licenças, tudo com a nossa equipe.</p></li>
+					<li class="reg-passo"><b>04</b><h4>CNPJ na sua mão</h4><p>Sua empresa pronta para emitir notas e faturar.</p></li>
+				</ol>
+			</div>
+
+			<div class="wow fadeInUp reg-ficha-col" data-wow-delay="0.8s">
+				<div class="ficha">
+					<div class="ficha-topo">
+						<small>FICHA DE ABERTURA</small>
+						<strong>Seu CNPJ começa aqui</strong>
+						<div class="ficha-selo" aria-hidden="true"><span>CNPJ</span><em>EM BREVE</em></div>
+					</div>
+					<div class="ficha-corpo">
+						<form action="registrar.php" method="post" data-ajax>
+							<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+							<label for="nome">Seu nome</label>
+							<input name="nome" type="text" class="form-control" id="nome" placeholder="Como podemos te chamar?" required autocomplete="name">
+
+							<label for="empresa">Empresa ou ideia de negócio</label>
+							<input name="empresa" type="text" class="form-control" id="empresa" placeholder="Nome da empresa (opcional)" autocomplete="organization">
+
+							<label for="telefone">Telefone com DDD</label>
+							<input name="telefone" type="tel" class="form-control" id="telefone" placeholder="(11) 90000-0000" required autocomplete="tel" inputmode="tel" pattern="[0-9\s\(\)\+\-]{10,}">
+
+							<label for="email">Seu melhor e-mail</label>
+							<input name="email" type="email" class="form-control" id="email" placeholder="voce@exemplo.com" required autocomplete="email">
+
+							<p class="form-status" role="status" aria-live="polite"></p>
+							<button type="submit" class="ficha-btn" id="submit"><span>QUERO ABRIR MINHA EMPRESA</span> <i class="fa fa-arrow-right"></i></button>
+							<p class="ficha-nota">Respondemos em até 1 dia útil.</p>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<script>
+(function () {
+  var t = document.getElementById('regTrilha');
+  if (!t) { return; }
+  if (!('IntersectionObserver' in window)) { t.classList.add('on'); return; }
+  new IntersectionObserver(function (e, o) {
+    if (e[0].isIntersecting) { t.classList.add('on'); o.disconnect(); }
+  }, { threshold: 0.25 }).observe(t);
+})();
+</script>
+
+<!-- =========================
+    FAQ SECTION
+============================== -->
+<section id="faq" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow bounceIn col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 text-center">
+				<div class="section-title">
+					<h2 class="titulo-secao">Ainda tem dúvidas sobre seu negócio?</h2>
+					<p>Nós traduzimos os números da sua empresa em respostas estratégicas para você crescer.</p>
+				</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10" data-wow-delay="0.9s">
+				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingOne">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									Patrimônio
+								</a>
+							</h4>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+							<div class="panel-body">
+								<p>Representa a fotografia financeira da empresa em um exato momento.
+								Organiza-se entre o que o negócio possui de bens e direitos e o que deve de obrigações.
+								Sua saúde é medida pelo Patrimônio Líquido, que é o valor real pertencente aos sócios.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingTwo">
+							<h4 class="panel-title">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									Resultado
+								</a>
+							</h4>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+							<div class="panel-body">
+								<p>Demonstra a eficiência econômica e a rentabilidade operacional ao longo de um período.
+								Calcula se a empresa gerou lucro ou prejuízo ao confrontar as receitas com os custos.
+								Utiliza o regime de competência, registrando os fatos no momento em que eles acontecem.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingThree">
+							<h4 class="panel-title">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									Fluxo de Caixa
+								</a>
+							</h4>
+						</div>
+						<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+							<div class="panel-body">
+								<p>Controla a movimentação física de dinheiro que efetivamente entra e sai da conta bancária.</p>
+								<p>Garante a liquidez imediata e a sobrevivência do negócio no curtíssimo prazo.
+								Diferencia os recursos entre as atividades operacionais, de investimentos e de financiamentos.</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<!-- =========================
+    CONTACT SECTION
+============================== -->
+<section id="contact" class="parallax-section">
+	<div class="container">
+
+		<div class="wow fadeInUp ctt-topo" data-wow-delay="0.4s">
+			<h2 class="titulo-secao">Contato e Localização</h2>
+			<p>Pronto para transformar a gestão financeira do seu negócio? Fale com a nossa equipe ou venha nos visitar.</p>
+		</div>
+
+		<div class="ctt-grid">
+
+			<div class="wow fadeInUp ctt-mapa" data-wow-delay="0.6s">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!4v1792775701546!6m8!1m7!1sR7X52A7941T336i_iDeG0g!2m2!1d-23.54743366134371!2d-46.63419855892469!3f86.13113!4f0!5f0.7820865974627469"
+					title="Localização da Onix Gestão Contábil"
+					allowfullscreen
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+
+			<div class="wow fadeInUp ctt-info" data-wow-delay="0.9s">
+				<h3>Onix Gestão Contábil</h3>
+
+				<ul class="ctt-lista">
+					<li>
+						<i class="fa fa-map-marker"></i>
+						<div><strong>Endereço</strong>
+						<span>Rua 15 de Novembro, Sé<br>São Paulo / SP<!-- acrescente aqui o número, o conjunto e o CEP --></span></div>
+					</li>
+					<li>
+						<i class="fa fa-whatsapp"></i>
+						<div><strong>WhatsApp e telefone</strong>
+						<span><a href="https://wa.me/5511981228030" target="_blank" rel="noopener noreferrer">(11) 98122-8030</a></span></div>
+					</li>
+					<li>
+						<i class="fa fa-envelope"></i>
+						<div><strong>E-mail</strong>
+						<span><a href="mailto:onix.contabilidade@yahoo.com">onix.contabilidade@yahoo.com</a></span></div>
+					</li>
+					<li>
+						<i class="fa fa-clock-o"></i>
+						<div><strong>Horário de atendimento</strong>
+						<span>Segunda a sexta-feira, das 9h às 17h</span></div>
+					</li>
+				</ul>
+
+				<div class="ctt-botoes">
+					<a class="ctt-btn ctt-btn--ouro" href="https://wa.me/5511981228030?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp"></i> CHAMAR NO WHATSAPP</a>
+					<a class="ctt-btn ctt-btn--linha" href="https://www.google.com/maps/search/?api=1&amp;query=-23.54743366134371,-46.63419855892469" target="_blank" rel="noopener noreferrer"><i class="fa fa-location-arrow"></i> COMO CHEGAR</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    WHATSAPP (botão flutuante)
+============================== -->
+<a class="btn-whats" href="https://wa.me/5511981228030?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+   target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp">
+	<img src="images/whatsapp.png" alt="WhatsApp" width="64" height="64">
+</a>
+
+
+<!-- =========================
+    FOOTER SECTION
+============================== -->
+<footer>
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12">
+				<p class="wow fadeInUp" data-wow-delay="0.6s">Copyright &copy; 2026 Onix Gestão Contábil. Todos os direitos reservados.</p>
+
+				<ul class="social-icon">
+					<li><a href="https://wa.me/5511981228030" class="fa fa-whatsapp wow fadeInUp" data-wow-delay="1s" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"></a></li>
+					<li><a href="mailto:onix.contabilidade@yahoo.com" class="fa fa-envelope wow fadeInUp" data-wow-delay="1.3s" aria-label="E-mail"></a></li>
+					<li><a href="https://www.instagram.com/onixcontabilidade/" class="fa fa-instagram wow fadeInUp" data-wow-delay="1.6s" target="_blank" rel="noopener noreferrer" aria-label="Instagram"></a></li>
+
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+
+<!-- Back top -->
+<a href="#inicio" class="go-top" aria-label="Voltar ao topo"><i class="fa fa-angle-up"></i></a>
+
+
+<!-- =========================
+     SCRIPTS
+============================== -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom.js"></script>
+
+<script>
+document.querySelectorAll('form[data-ajax]').forEach(function (form) {
+  var status = form.querySelector('.form-status');
+  var botao  = form.querySelector('[type="submit"]');
+  var ehInput = botao.tagName === 'INPUT';
+  var escuro = !!form.closest('#register') && !form.closest('.ficha');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    var valorOriginal = ehInput ? botao.value : botao.innerHTML;
+    botao.disabled = true;
+    if (ehInput) { botao.value = 'ENVIANDO...'; } else { botao.textContent = 'ENVIANDO...'; }
+    status.textContent = '';
+
+    fetch(form.action, { method: 'POST', body: new FormData(form) })
+    .then(function (res) {
+      if (!res.ok) { throw new Error('erro'); }
+      form.reset();
+      status.style.color = escuro ? '#a5d6a7' : '#2e7d32';
+      status.textContent = 'Mensagem enviada com sucesso! Em breve entraremos em contato.';
+    })
+    .catch(function () {
+      status.style.color = escuro ? '#ffcdd2' : '#c62828';
+      status.textContent = 'Não foi possível enviar agora. Fale conosco pelo WhatsApp: (11) 98122-8030.';
+    })
+    .finally(function () {
+      botao.disabled = false;
+      if (ehInput) { botao.value = valorOriginal; } else { botao.innerHTML = valorOriginal; }
+    });
+  });
+});
+</script>
+
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.mk-card'));
+  if(!cards.length||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var tick=false;
+  function atualiza(){
+    tick=false;
+    if(window.innerWidth<=991){cards.forEach(function(c){c.style.setProperty('--py','0px')});return;}
+    cards.forEach(function(c){
+      var r=c.getBoundingClientRect();
+      if(r.bottom<-200||r.top>innerHeight+200)return;
+      var d=((r.top+r.height/2)-innerHeight/2)*parseFloat(c.dataset.speed);
+      c.style.setProperty('--py',d.toFixed(1)+'px');
+    });
+  }
+  function pede(){if(!tick){tick=true;requestAnimationFrame(atualiza);}}
+  addEventListener('scroll',pede,{passive:true});addEventListener('resize',pede);atualiza();
+})();
+</script>
+</body>
+</html>
