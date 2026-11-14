@@ -1,0 +1,107 @@
+/* =====================================================================
+   Onix – TEMA CLARO (usado só por index-claro.html)
+   Mesmo site, com fundos brancos/azul-claro e textos em azul Onix.
+   ===================================================================== */
+:root{--c-navy:#0f2c57;--c-azul:#2f86c4;--c-txt:#35507a;--c-fundo:#f4f8fc;--c-fundo2:#e6eef8;--c-linha:rgba(15,44,87,.14)}
+
+/* ---------- Escritório (livro) ---------- */
+#overview{background:linear-gradient(180deg,#f9fbfe 0%,var(--c-fundo2) 100%) !important}
+#overview .cat-book::before{box-shadow:0 30px 44px -22px rgba(15,44,87,.42),0 6px 16px rgba(15,44,87,.22)}
+
+/* ---------- E-commerce ---------- */
+#marketplace.ecx{--ecx-bg:#f4f8fc;--ecx-txt:#0f2c57;--ecx-line:rgba(15,44,87,.22);background:linear-gradient(180deg,#fbfdff,#e9f1fa)}
+.ecx-card{box-shadow:0 18px 40px rgba(15,44,87,.25)}
+.ecx-card::after{color:var(--c-navy)}
+.ecx-text p{color:var(--c-txt)}
+.ecx-text .ecx-kicker{color:#5d7599}
+.ecx-text .ecx-title{color:var(--c-navy)}
+.ecx-text .ecx-lead{color:var(--c-navy)}
+.ecx-btn{border-color:var(--c-navy);color:var(--c-navy)}
+.ecx-btn:hover,.ecx-btn:focus{background:var(--c-navy);color:#fff}
+.ecx-dot{background:rgba(15,44,87,.22)}
+.ecx-dot.is-active{background:var(--c-navy)}
+.ecx-mouse{color:var(--c-navy)}
+
+/* ---------- Serviços (linha do tempo) ---------- */
+#program{background:#fff !important}
+#program .titulo-secao{color:var(--c-navy) !important}
+#program .timeline .swiper-slide{color:var(--c-navy)}
+#program .timeline .swiper-slide::after{background-color:rgba(255,255,255,.88);box-shadow:-230px 0 150px 60vw rgba(255,255,255,.88)}
+#program .timeline .swiper-slide .timeline-year{color:#5d7599}
+#program .timeline .swiper-slide .timeline-title{color:var(--c-navy)}
+#program .timeline .swiper-slide .timeline-text{color:var(--c-txt)}
+#program .timeline .swiper-pagination.swiper-pagination-bullets::before{background-color:var(--c-linha)}
+#program .timeline .swiper-pagination-bullet::before{background-color:var(--c-navy)}
+@media (max-width:1024px){#program .timeline .swiper-slide::after{box-shadow:-230px 0 150px 50vw rgba(255,255,255,.88)}}
+@media (max-width:767px){#program .timeline .swiper-slide::after{box-shadow:-230px 0 150px 39vw rgba(255,255,255,.88)}}
+
+/* ---------- Depoimentos ---------- */
+.onix-videos,.onix-videos .dep-hero{background:#e9f0f8;color:var(--c-navy)}
+.onix-videos .dep-bg img{filter:blur(12px) saturate(1.05) brightness(1.15)}
+.onix-videos .dep-shade{background:linear-gradient(180deg,rgba(255,255,255,.78) 0%,rgba(255,255,255,.4) 40%,rgba(255,255,255,.78) 100%)}
+.onix-videos .dep-frame{border-color:rgba(15,44,87,.22)}
+.onix-videos .dep-foto__in{box-shadow:0 0 0 7px rgba(255,255,255,.85),0 24px 50px rgba(15,44,87,.3)}
+.onix-videos .dep-by{color:var(--c-txt)}
+.onix-videos .dep-nome{color:var(--c-navy);text-shadow:none}
+.onix-videos .dep-btn{border-color:var(--c-navy);background:rgba(255,255,255,.75);color:var(--c-navy)}
+.onix-videos .dep-btn:hover,.onix-videos .dep-btn:focus-visible{background:#fff}
+.onix-videos .dep-ico{background:var(--c-navy)}
+.onix-videos .dep-ico::before{border-color:transparent transparent transparent #fff}
+.onix-videos .dep-count{color:var(--c-txt)}
+.onix-videos .dep-count b{color:var(--c-navy)}
+.onix-videos .dep-strip{background:rgba(255,255,255,.62);box-shadow:inset 0 1px 0 rgba(15,44,87,.1)}
+.onix-videos .dep-t.ativo{border-color:var(--c-navy);box-shadow:0 12px 26px rgba(15,44,87,.3)}
+.onix-videos .dep-seta{color:var(--c-navy)}
+.onix-videos .dep-btn:focus-visible,.onix-videos .dep-t:focus-visible,.onix-videos .dep-seta:focus-visible{outline-color:var(--c-navy)}
+.onix-videos .onix-videos__topo::after{background:var(--c-azul)}
+.onix-videos .onix-videos__topo h2.titulo-secao{color:var(--c-navy) !important;text-shadow:none !important}
+.onix-videos .onix-videos__topo p{color:var(--c-txt) !important;text-shadow:none !important}
+
+/* ---------- Parceiros ---------- */
+#sponsors{background:linear-gradient(180deg,#f9fbfe,var(--c-fundo2)) !important}
+#sponsors .section-title h2.titulo-secao{color:var(--c-navy) !important;text-shadow:none !important}
+#sponsors .section-title p{color:var(--c-txt) !important;text-shadow:none !important}
+#sponsors .pcirc .card{box-shadow:0 10px 28px rgba(15,44,87,.16);border:1px solid rgba(15,44,87,.07)}
+#sponsors .pcirc h1{color:var(--c-navy);text-shadow:none}
+#sponsors .pcirc header p{color:var(--c-txt);text-shadow:none}
+
+/* ---------- Registre sua empresa ---------- */
+#register{color:var(--c-navy);background:linear-gradient(135deg,#f9fbfe,#e3edf8) !important;background-attachment:scroll !important}
+#register h2,#register .titulo-secao{color:var(--c-navy) !important}
+#register .reg-lead{color:var(--c-txt)}
+.reg-trilha::before{background:rgba(15,44,87,.16)}
+.reg-passo b{background:#fff;color:var(--c-azul);border-color:var(--c-azul);box-shadow:0 6px 16px rgba(15,44,87,.18)}
+#register .reg-passo h4{color:var(--c-navy)}
+#register .reg-passo p{color:var(--c-txt)}
+.ficha{box-shadow:0 26px 60px rgba(15,44,87,.2);border:1px solid rgba(15,44,87,.08)}
+.ficha-corpo::before,.ficha-corpo::after{background:#eef4fb;box-shadow:inset 0 2px 5px rgba(15,44,87,.16)}
+.ficha-selo{box-shadow:0 12px 26px rgba(15,44,87,.28)}
+#register .ficha-nota{color:#6a7f9c}
+
+/* ---------- Contato ---------- */
+#contact{color:var(--c-navy);background:linear-gradient(135deg,#f9fbfe,#e3edf8) !important;background-attachment:scroll !important}
+#contact .titulo-secao,#contact .ctt-topo h2{color:var(--c-navy) !important}
+#contact .ctt-topo p{color:var(--c-txt)}
+#contact .ctt-mapa{box-shadow:0 18px 44px rgba(15,44,87,.18);border:1px solid rgba(15,44,87,.08)}
+#contact .ctt-info h3{color:var(--c-navy)}
+#contact .ctt-lista .fa{background:rgba(47,134,196,.12);color:var(--c-azul)}
+#contact .ctt-lista strong{color:#2f6fa8}
+#contact .ctt-lista span,#contact .ctt-lista a{color:var(--c-navy)}
+#contact .ctt-lista a:hover{color:var(--c-azul)}
+#contact .ctt-btn--linha{background:rgba(15,44,87,.08);color:var(--c-navy)}
+#contact .ctt-btn--linha:hover{background:rgba(15,44,87,.15);color:var(--c-navy)}
+
+/* ---------- Rodapé / barra de abas do app ---------- */
+footer{background:#fff;color:var(--c-txt)}
+
+/* ---------- Abertura (vídeo claro de documentos + logo 3D) ---------- */
+@media (min-width:768px){
+  .custom-navbar:not(.top-nav-collapse) .nav li a{color:#0f2c57}
+  .custom-navbar:not(.top-nav-collapse) .nav li a:hover{color:#319cd1}
+  .custom-navbar:not(.top-nav-collapse) .nav li.active>a{color:#319cd1}
+}
+#inicio.intro-section::after{background:rgba(255,255,255,.42)}
+#inicio .ol-3d{transform:none}
+#inicio .ol-3d .onix-logo{filter:none}
+#inicio .ol-3d .ol-x{fill:#000;opacity:.55}
+#inicio .ol-3d .ol-sub{color:#153859;text-shadow:2px 3px 0 rgba(0,0,0,.22)}
