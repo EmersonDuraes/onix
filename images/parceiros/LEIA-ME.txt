@@ -1,0 +1,14 @@
+Coloque aqui os logos em PNG (fundo transparente, altura ~120 px), com estes nomes:
+contaazul.png  ->  Conta Azul
+omie.png  ->  OMIE
+bling.png  ->  Bling
+alterdata.png  ->  Alterdata
+dominio.png  ->  Domínio Sistemas
+tron.png  ->  Tron
+inter.png  ->  Banco Inter
+cora.png  ->  Cora
+nubank.png  ->  Nubank PJ
+soluti.png  ->  Soluti
+certisign.png  ->  Certisign
+
+Enquanto um arquivo não existir, o letreiro mostra o nome da empresa em texto.
